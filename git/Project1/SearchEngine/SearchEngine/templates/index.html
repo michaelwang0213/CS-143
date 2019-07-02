@@ -1,0 +1,47 @@
+<html>
+        <head>
+                <title>TuneSearch</title>
+                <!--<link rel="stylesheet" type="text/css" href="/static/searchengine.css" media="screen" />-->
+                <style type="text/css">
+                    body {
+                      display:flex;
+                      margin:10px;
+                      flex-direction:column;
+                      font-family: Arial;
+                      background-color: purple
+                    }
+
+                    .box {
+                      margin:auto;
+                      justify-content: center;
+                      align-items: center;
+                      text-align: center;
+                    }
+
+                    .box > div {
+                      margin: 15px;
+                      color:white;
+                    }
+                </style>
+        </head>
+        <body>
+                <div class="box">
+                        <div>
+                                <img src="/static/header.png" />
+                        </div>
+                        <div id="searchbar">
+                                <form action="{{ url_for('dosearch') }}" method="GET">
+                                <div>
+                                                <input type="radio" name="query_type" value="or" checked>
+                                                <label for="or">OR</label>
+                                                <input type="radio" name="query_type" value="and">
+                                             	<label for="and">AND</label>
+                                                <input type="hidden" name="page_num" value=1>
+                                                <input type="hidden" name="page_turns" value=0>
+                                               	<input type="text" maxlength=50 size=50 name="query" placeholder="barney was a dinosaur"><input type="submit" value="Search">
+                                </div>
+                                </form>
+                        </div>
+                </div>
+        </body>
+</html>
